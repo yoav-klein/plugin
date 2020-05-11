@@ -34,6 +34,7 @@ public class MyParameter extends SimpleParameterDefinition {
         super(name, description);
         this.defaultValue = defaultValue;
         this.trim = trim;
+        System.out.println("CTOR CALLED");
     }
 
     public MyParameter(String name, String defaultValue, String description) {
@@ -55,7 +56,8 @@ public class MyParameter extends SimpleParameterDefinition {
     }
 
     public String getDefaultValue() {
-        return defaultValue;
+        System.out.println("GETDEFAULTVALUE");
+    	return defaultValue;
     }
 
     /**
@@ -65,12 +67,15 @@ public class MyParameter extends SimpleParameterDefinition {
     @Restricted(DoNotUse.class) // Jelly
     public String getDefaultValue4Build() {
         if (isTrim()) {
-            return Util.fixNull(defaultValue).trim();
+        	System.out.println("GETDEFAULTVALUE4BUILD");
+        	return Util.fixNull(defaultValue).trim();
         }
+        System.out.println("GETDEFAULTVALUE4BUILD");
         return defaultValue;
     }
     
     public void setDefaultValue(String defaultValue) {
+    	System.out.println("SET DEFAULT VALUE");
         this.defaultValue = defaultValue;
     }
 
@@ -82,7 +87,8 @@ public class MyParameter extends SimpleParameterDefinition {
      * @since 2.90
      */
     public boolean isTrim() {
-        return trim;
+    	System.out.println("ISTRIM");
+    	return trim;
     }
     
     @Override
@@ -91,6 +97,8 @@ public class MyParameter extends SimpleParameterDefinition {
         if (isTrim()) {
             value.doTrim();
         }
+        System.out.println("GETDEFAULTPARAMETERVALUE");
+        
         return value;
     }
 
@@ -115,6 +123,7 @@ public class MyParameter extends SimpleParameterDefinition {
             value.doTrim();
         }
         value.setDescription(getDescription());
+        System.out.println("CREATE VALUE");
         return value;
     }
 
@@ -123,6 +132,7 @@ public class MyParameter extends SimpleParameterDefinition {
         if (isTrim()) {
             value.doTrim();
         }
+        System.out.println("CREATE VALUE");
         return value;
     }
 }
