@@ -1,0 +1,15 @@
+<?jelly escape-by-default='true'?>
+<!--
+ Copyright (c) 2013 Costco, Vimil Saju
+ See the file license.txt for copying permission. 
+-->
+
+
+<!--
+  This view is used to render the plugin list page.
+
+  Since we don't really have anything dynamic here, let's just use static HTML. 
+-->
+<div>
+  Adds extended functionality to Choice parameter
+</div>
